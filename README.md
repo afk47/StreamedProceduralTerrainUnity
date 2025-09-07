@@ -1,7 +1,8 @@
 # Chunked Procedural Terrain (Unity)
 
 A Unity component for generating infinite procedural terrain using chunk streaming and multithreaded Perlin noise (via Burst + Jobs).  
-Terrain loads around the player in chunks and unloads when outside render distance. Includes editor tooling for regeneration.
+Terrain loads around the player in chunks and unloads when outside render distance. Includes editor tooling for regeneration. 
+Not intended to be used as-is, Modify this code to fit your game/project's needs
 
 ---
 
@@ -15,11 +16,7 @@ Terrain loads around the player in chunks and unloads when outside render distan
 ---
 
 ## Requirements
-- Unity 2021.3+ (tested)
-- Burst package
-- Collections package
-- EasyRoads3Dv3 (optional dependency, included in using statements)
-
+- Unity 6 (tested)
 ---
 
 ## Usage
@@ -40,7 +37,7 @@ Terrain loads around the player in chunks and unloads when outside render distan
 
 ### Player & Chunk Settings
 - **Player**: Transform followed.
-- **Terrain Prefab**: Base terrain.
+- **Terrain Prefab**: Base terrain prefab, when generating a new terrain chunk it will use the textures set in this prefab 
 - **Chunk Size**: Resolution of each terrain tile.
 - **Render Distance**: Number of chunks in each direction.
 
@@ -72,7 +69,9 @@ Terrain loads around the player in chunks and unloads when outside render distan
 - Uses `NativeArray<float>` for height storage and `JobHandle` for async execution.
 - Terrain collider updates automatically.
 - Unused chunks are destroyed to save memory.
-
+- Fractal Brownian Motion Algorithm used is somewhat modified for my use case, you can reimplement as
+  basic stacked perlin noise without ridges or basins
+- if you have weird symmetry, try using an offset, perlin noise in unity is symmetrical at the origin
 ---
 
 ## License
