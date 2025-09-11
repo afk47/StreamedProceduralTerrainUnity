@@ -4,6 +4,9 @@ A Unity component for generating infinite procedural terrain using chunk streami
 Terrain loads around the player in chunks and unloads when outside render distance. Includes editor tooling for regeneration. 
 Not intended to be used as-is, Modify this code to fit your game/project's needs
 
+
+https://github.com/user-attachments/assets/ff2bd78e-ab6b-457c-b858-16b3c30d0eed
+
 ---
 
 ## Features
